@@ -8,6 +8,7 @@ import { useState } from "react";
 function Nav() {
   // scrool (detecter la transiton quand on scrool)
   const [navBlack, setNavBlack] = useState(false);
+  const [toggleMenu, setToggleMenu] = useState(false);
 
   const transitionNav = () => {
     window.scrollY > 100 ? setNavBlack(true) : setNavBlack(false);
@@ -17,13 +18,18 @@ function Nav() {
     document.addEventListener("scroll", transitionNav);
   });
 
-  console.log(navBlack);
-  //
+  //  Derouler le toggleMenu
+  const handleClick = () => {
+    toggleMenu ? setToggleMenu(false) : setToggleMenu(true);
+    console.log(toggleMenu);
+  };
+
+  
   return (
-    // 1- if navBlach is true add "nav--black"
-    
-    <div className={`nav ${navBlack && "nav--black"} `}>
-      <button className="nav__burger">
+    // 1- if navBlack is true add "nav--black"
+
+    <div className={`nav ${navBlack || toggleMenu ? "nav--black" : 'nav--transparent'}  ${toggleMenu && "show"}`}>
+      <button className="nav__burger" onClick={handleClick}>
         <MenuIcon></MenuIcon>
       </button>
       <img src="./images/logo.png" className="nav__logo" alt="Netflix" />
