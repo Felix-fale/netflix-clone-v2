@@ -6,6 +6,7 @@ function App() {
     <div className="App">
       {/* navbar */}
       <Nav></Nav>
+      <div className="test"></div>
 
       {/* banner */}
 

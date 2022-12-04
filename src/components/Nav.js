@@ -1,39 +1,56 @@
 import "./Nav.scss";
-import MenuIcon from '@material-ui/icons/Menu';
+import MenuIcon from "@material-ui/icons/Menu";
+import SearchIcon from "@material-ui/icons/Search";
+import RedeemIcon from "@material-ui/icons/Redeem";
+import NotificationsIcon from "@material-ui/icons/Notifications";
+import { useState } from "react";
 
 function Nav() {
+  // scrool (detecter la transiton quand on scrool)
+  const [navBlack, setNavBlack] = useState(false);
+
+  const transitionNav = () => {
+    window.scrollY > 100 ? setNavBlack(true) : setNavBlack(false);
+  };
+
+  useState(() => {
+    document.addEventListener("scroll", transitionNav);
+  });
+
+  console.log(navBlack);
+  //
   return (
-    <div className="nav nav--black">
+    <div className={`nav ${navBlack && "nav--black"} `}>
       <button className="nav__burger">
-      <MenuIcon></MenuIcon>
+        <MenuIcon></MenuIcon>
       </button>
       <img src="./images/logo.png" className="nav__logo" alt="Netflix" />
       <nav className="nav__links">
         <a href="/" className="nav__link">
-            Accueil
+          Accueil
         </a>
         <a href="/" className="nav__link">
-            Series
+          Series
         </a>
         <a href="/" className="nav__link">
-            Films
+          Films
         </a>
       </nav>
       <div className="nav__actions">
         <a href="/" className="nav__action">
-            search
+          <SearchIcon></SearchIcon>
         </a>
         <a href="/" className="nav__action">
-            DIRECT
+          DIRECT
         </a>
         <a href="/" className="nav__action">
-            Gift
+          <RedeemIcon></RedeemIcon>
         </a>
         <a href="/" className="nav__action">
-            Notif
+          <NotificationsIcon></NotificationsIcon>
         </a>
         <a href="/" className="nav__action">
-            <img src="./images/avatar.jpg" alt="avatar" />
+          <img src="./images/avatar.jpg" alt="avatar" />
         </a>
       </div>
     </div>
@@ -41,3 +58,4 @@ function Nav() {
 }
 
 export default Nav;
+// 24m00s
