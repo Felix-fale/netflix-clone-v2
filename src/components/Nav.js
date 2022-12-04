@@ -20,6 +20,8 @@ function Nav() {
   console.log(navBlack);
   //
   return (
+    // 1- if navBlach is true add "nav--black"
+    
     <div className={`nav ${navBlack && "nav--black"} `}>
       <button className="nav__burger">
         <MenuIcon></MenuIcon>
