@@ -1,0 +1,36 @@
+.banner{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 50vh;
+    font-size: 0.9rem;
+    padding-bottom: 3rem;
+    background-color: rgb(74,74,74);
+    color: #fff;
+    &__content{
+        width: 60vw;
+        padding: 8vh 4% 0 4%;
+        .banner__title{
+            font-size: 1.5rem;
+        }
+        .banner__buttons{
+            display: flex;
+            .banner__button{
+                display: flex;
+                align-items: center;
+                color: inherit;
+                background-color: rgba(110,110,110,0.7);
+                font-weight: 600;
+                padding: 0.4rem 1rem 0.4rem 0.5rem;
+                margin-right: 0.7rem;
+                border-radius: 5px;
+                &--play{
+                    background-color: rgba(255, 255, 255, 0.7);
+                }
+            }
+        }
+    }
+    &::after{
+        content: "";
+    }
+}
