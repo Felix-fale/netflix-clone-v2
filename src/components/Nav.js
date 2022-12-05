@@ -66,4 +66,3 @@ function Nav() {
 }
 
 export default Nav;
-// 24m00s

@@ -1,5 +1,6 @@
 import './App.scss';
 import Nav from './components/Nav';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       {/* quick view */}
 
       {/* footer */}
+      <Footer></Footer>
     </div>
   );
 }
