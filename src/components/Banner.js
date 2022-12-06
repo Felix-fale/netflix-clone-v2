@@ -2,7 +2,7 @@ import "./Banner.scss";
 import { useState, useEffect } from "react";
 import PlayArrowIcon from "@material-ui/icons/PlayArrow";
 import HelpOutlineIcon from "@material-ui/icons/HelpOutline";
-import Requests from "../config/Requests";
+// import Requests from "../config/Requests";
 import axios from "axios";
 import requests from "../config/Requests";
 
@@ -10,7 +10,7 @@ function Banner() {
   const [movie, setMovie] = useState([]);
 
   const bannerStyle = {
-    backgroundImage: `url("https://image.tmbd.org/t/p/original/${movie.backdrop_path}")`,
+    backgroundImage: `url("https://image.tmdb.org/t/p/original/${movie?.backdrop_path}")`,
     backgroundSize: "cover",
     backgroundPosition: "center center",
   };
@@ -21,12 +21,14 @@ function Banner() {
 
       setMovie(
         request.data.results[
-          Math.floor(Math.random() * request.data.results.lenght - 1)
+          Math.floor(Math.random() * request.data.results.length - 1)
         ]
       );
     }
     fetchData();
   }, []);
+
+  console.log(movie);
 
   function truncateText(string, n) {
     return string?.length > n
@@ -34,7 +36,6 @@ function Banner() {
       : "No description";
   }
 
-  console.log(movie);
   return (
     <header className="banner" style={bannerStyle}>
       <div className="banner__content">
@@ -42,8 +43,7 @@ function Banner() {
           {movie?.title || movie?.name || movie?.original_title}
         </h1>
         <p className="banner__description">
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores ut
-          ve ! {truncateText(movie?.overview, 100)}
+          {truncateText(movie?.overview, 100)}
         </p>
         <div className="banner__buttons">
           <button className="banner__button banner__button--play">
@@ -59,3 +59,4 @@ function Banner() {
 }
 
 export default Banner;
+

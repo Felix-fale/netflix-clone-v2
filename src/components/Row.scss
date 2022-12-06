@@ -1,0 +1,25 @@
+.row{
+    padding: 1rem 4%;
+    color: #fff;
+    &__title{
+        font-size: 1.7rem;
+        padding: 0 .5rem;
+    }
+    &__images{
+        display: flex;
+        align-items: center;
+        overflow-x: visible;
+        overflow-y: hidden;
+        width: 100%;
+        padding: .5rem 0;
+        .row__image{
+            width: 300px;
+            padding: 0.5rem;
+            transition: transform 0.3s ease-in; //1h:39m pour la scroll bar
+            &:hover{
+                cursor: pointer;
+                transform: scale(1.1);
+            }
+        }
+    }
+}
