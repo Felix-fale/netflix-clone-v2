@@ -1,5 +1,5 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+// import { useParams } from "react-router-dom";
 
 function Video(props) {
   //   let { id } = useParams();
@@ -7,12 +7,12 @@ function Video(props) {
   console.log(id);
   return (
     <div className="video">
-      {/* <iframe
+      <iframe
         src={`https://www.youtube.com/embed/${id}`}
         title="video"
         frameborder="0"
         allowfullscreen
-      ></iframe> */}
+      ></iframe>
       {/* <iframe
         width="751"
         height="563"
