@@ -1,4 +1,5 @@
 import React from "react";
+import "./Video.scss";
 // import { useParams } from "react-router-dom";
 
 function Video(props) {

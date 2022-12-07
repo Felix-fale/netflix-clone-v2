@@ -29,13 +29,13 @@ function Row({ title, fetchUrl, isPoster }) {
                 <img
                   src={`${baseUrl}/${movie?.poster_path}`}
                   className="row__image"
-                  alt="{movie?.title || movie?.name || movie?.original_title}"
+                  alt={movie?.title || movie?.name || movie?.original_title}
                 />
               ) : (
                 <img
                   src={`${baseUrl}/${movie?.backdrop_path}`}
                   className="row__image"
-                  alt="{movie?.title || movie?.name || movie?.original_title}"
+                  alt={movie?.title || movie?.name || movie?.original_title}
                 />
               )}
             </Link>

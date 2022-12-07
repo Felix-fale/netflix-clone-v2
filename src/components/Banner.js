@@ -57,7 +57,6 @@ function Banner() {
               <PlayArrowIcon></PlayArrowIcon> Lecture
             </button>
           </Link>
-
           <button className="banner__button" onClick={handleClickPopup}>
             <HelpOutlineIcon></HelpOutlineIcon> Plus d'infos
           </button>
