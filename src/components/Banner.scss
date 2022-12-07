@@ -1,4 +1,4 @@
-.banner{
+.banner {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -6,49 +6,59 @@
     height: 50vh;
     font-size: 0.9rem;
     padding-bottom: 3rem;
-    background-color: rgb(74,74,74);
+    background-color: rgb(74, 74, 74);
     color: #fff;
+
     @media screen and (min-width:768px) {
         font-size: 1.2rem;
         height: 60vh;
         padding-bottom: 7rem;
     }
-    &__content{
+
+    &__content {
         width: 60vw;
         padding: 8vh 4% 0 4%;
+
         @media screen and (min-width: 768px) {
             padding-top: 40vh;
         }
-        .banner__title{
+
+        .banner__title {
             font-size: 1.5rem;
         }
-        .banner__buttons{
+
+        .banner__buttons {
             display: flex;
-            .banner__button{
+
+            .banner__button {
                 display: flex;
                 align-items: center;
                 color: inherit;
-                background-color: rgba(110,110,110,0.7);
+                background-color: rgba(110, 110, 110, 0.7);
                 font-weight: 600;
                 padding: 0.4rem 1rem 0.4rem 0.5rem;
                 margin-right: 0.7rem;
                 border-radius: 5px;
                 cursor: pointer;
+
                 @media screen and (min-width:768px) {
                     font-size: 1.4rem;
                     padding: 0.8rem 1.5rem;
                 }
-                &--play{
+
+                &--play {
                     color: #111;
                     background-color: rgba(255, 255, 255, 0.7);
                 }
-                svg{
+
+                svg {
                     margin-right: 0.4rem;
                 }
             }
         }
     }
-    &::after{
+
+    &::after {
         content: "";
         display: block;
         width: 100%;
@@ -56,9 +66,14 @@
         position: absolute;
         bottom: 0;
         background: linear-gradient(180deg, rgba(31, 31, 31, 0), rgba(31, 31, 31, 0.5), #111);
+
         @media screen and (min-width768px) {
             height: 7rem;
         }
+    }
+
+    a {
+        text-decoration: none;
     }
 }
 

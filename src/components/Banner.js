@@ -2,10 +2,10 @@ import "./Banner.scss";
 import { useState, useEffect } from "react";
 import PlayArrowIcon from "@material-ui/icons/PlayArrow";
 import HelpOutlineIcon from "@material-ui/icons/HelpOutline";
-// import Requests from "../config/Requests";
 import axios from "axios";
 import requests from "../config/Requests";
 import QuickView from "./QuickView";
+import { Link } from "react-router-dom";
 
 function Banner() {
   const [movie, setMovie] = useState([]);
@@ -52,9 +52,12 @@ function Banner() {
           {truncateText(movie?.overview, 100)}
         </p>
         <div className="banner__buttons">
-          <button className="banner__button banner__button--play">
-            <PlayArrowIcon></PlayArrowIcon> Lecture
-          </button>
+          <Link to={`/video/${movie?.id}`}>
+            <button className="banner__button banner__button--play">
+              <PlayArrowIcon></PlayArrowIcon> Lecture
+            </button>
+          </Link>
+
           <button className="banner__button" onClick={handleClickPopup}>
             <HelpOutlineIcon></HelpOutlineIcon> Plus d'infos
           </button>
