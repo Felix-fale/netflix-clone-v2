@@ -2,8 +2,9 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import "./Row.scss";
 
-function Row({title, fetchUrl}) {
+function Row({ title, fetchUrl, isPoster }) {
   const [movies, setMovies] = useState([]);
+  const baseUrl = "https://image.tmdb.org/t/p/original";
 
   useEffect(() => {
     async function fetchData() {
@@ -22,11 +23,19 @@ function Row({title, fetchUrl}) {
       <div className="row__images">
         {movies.map((movie) => (
           <div key={movie.id}>
-            <img
-              src={`https://image.tmbd.org/t/p/original/${movie.backdrop_path}`}
-              className="row__image"
-              alt="{movie?.title || movie?.name || movie?.original_title}"
-            />
+            {isPoster ? (
+              <img
+                src={`${baseUrl}/${movie?.poster_path}`}
+                className="row__image"
+                alt="{movie?.title || movie?.name || movie?.original_title}"
+              />
+            ) : (
+              <img
+                src={`${baseUrl}/${movie?.backdrop_path}`}
+                className="row__image"
+                alt="{movie?.title || movie?.name || movie?.original_title}"
+              />
+            )}
           </div>
         ))}
         Image
@@ -36,3 +45,5 @@ function Row({title, fetchUrl}) {
 }
 
 export default Row;
+
+// 1h44m30

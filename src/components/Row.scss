@@ -15,11 +15,24 @@
         .row__image{
             width: 300px;
             padding: 0.5rem;
-            transition: transform 0.3s ease-in; //1h:39m pour la scroll bar
+            transition: transform 0.3s ease-in;
             &:hover{
                 cursor: pointer;
                 transform: scale(1.1);
             }
         }
+    }
+    // styliser la srcoll bar
+    ::-webkit-scrollbar{
+        // -webkit-appearance: none;   --- A utiliser pour les Mac
+        background-color: #111;
+    }
+
+    ::-webkit-scrollbar-thumb{
+        background-clip: padding-box;
+        background-color: #000000;
+        border-radius: 9px;
+        border: 3px solid transparent;
+        box-shadow: 0 0 1px rgba(255, 255, 255, 0.3);
     }
 }

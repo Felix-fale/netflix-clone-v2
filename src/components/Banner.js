@@ -5,9 +5,11 @@ import HelpOutlineIcon from "@material-ui/icons/HelpOutline";
 // import Requests from "../config/Requests";
 import axios from "axios";
 import requests from "../config/Requests";
+import QuickView from "./QuickView";
 
 function Banner() {
   const [movie, setMovie] = useState([]);
+  const [popup, setPopup] = useState(false);
 
   const bannerStyle = {
     backgroundImage: `url("https://image.tmdb.org/t/p/original/${movie?.backdrop_path}")`,
@@ -28,12 +30,16 @@ function Banner() {
     fetchData();
   }, []);
 
-  console.log(movie);
+  console.log(popup);
 
   function truncateText(string, n) {
     return string?.length > n
       ? string.substr(0, n - 1) + "..."
       : "No description";
+  }
+
+  function handleClickPopup() {
+    popup ? setPopup(false) : setPopup(true);
   }
 
   return (
@@ -49,14 +55,19 @@ function Banner() {
           <button className="banner__button banner__button--play">
             <PlayArrowIcon></PlayArrowIcon> Lecture
           </button>
-          <button className="banner__button">
+          <button className="banner__button" onClick={handleClickPopup}>
             <HelpOutlineIcon></HelpOutlineIcon> Plus d'infos
           </button>
         </div>
       </div>
+      <QuickView
+        bannerStyle={bannerStyle}
+        movie={movie}
+        popup={handleClickPopup}
+        popupStatut={popup}
+      ></QuickView>
     </header>
   );
 }
 
 export default Banner;
-
