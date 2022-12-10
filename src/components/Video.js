@@ -8,6 +8,10 @@ function Video(props) {
   console.log(id);
   return (
     <div className="video">
+      <h3 className="video-title">
+         <u>Note from Fale Felix:</u>  I don't have access to the videos at the moment.
+        Enjoy this beautiful song
+      </h3>
       <iframe
         src={`https://www.youtube.com/embed/${id}`}
         title="Kanye West - Good Morning"
